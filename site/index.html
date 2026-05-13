@@ -122,6 +122,62 @@
       border-color: var(--ink);
     }
 
+    .nav a.repo-nav {
+      background: var(--amber);
+      color: var(--ink);
+      border-color: var(--ink);
+      font-weight: 900;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .nav a.repo-nav:hover,
+    .nav a.repo-nav.active {
+      background: var(--coral);
+      color: #fffaf0;
+      border-color: var(--ink);
+    }
+
+    .release-banner {
+      margin: 22px 0 0;
+      border: 2px solid var(--ink);
+      background:
+        linear-gradient(135deg, rgba(229, 160, 27, 0.98), rgba(223, 91, 69, 0.96));
+      box-shadow: 8px 8px 0 var(--ink);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+    }
+
+    .release-banner strong {
+      display: block;
+      font-size: clamp(22px, 3vw, 40px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .release-banner span {
+      display: block;
+      margin-top: 6px;
+      max-width: 760px;
+      color: #2d1d14;
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .release-banner .button {
+      min-height: 54px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 17px;
+      padding-inline: 22px;
+      box-shadow: 5px 5px 0 rgba(255, 251, 242, 0.55);
+    }
+
     .hero {
       min-height: calc(100vh - 64px);
       display: grid;
@@ -195,6 +251,20 @@
     .button.secondary {
       background: var(--panel);
       color: var(--ink);
+    }
+
+    .button.repo-primary {
+      background: var(--amber);
+      color: var(--ink);
+      min-height: 52px;
+      padding-inline: 22px;
+      font-size: 17px;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .button.repo-primary:hover {
+      transform: translate(-1px, -1px);
+      background: #ffc247;
     }
 
     .hero-meta {
@@ -1098,6 +1168,17 @@
         padding: 10px 0;
       }
 
+      .release-banner {
+        grid-template-columns: 1fr;
+        margin-top: 14px;
+        padding: 14px;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+
+      .release-banner .button {
+        width: 100%;
+      }
+
       .hero {
         padding-top: 28px;
       }
@@ -1187,12 +1268,21 @@
         <a href="#examples">Examples</a>
         <a href="#get">Get It</a>
         <a href="#sources">Sources</a>
+        <a class="repo-nav" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">GitHub Repo</a>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="shell">
+      <aside class="release-banner" aria-label="Get Swarm Dispatch">
+        <div>
+          <strong>Get Swarm Dispatch on GitHub</strong>
+          <span>Download the Codex skill, inspect the Claude-compatible plugin, copy the examples, or fork the public repo.</span>
+        </div>
+        <a class="button" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Open Repo</a>
+      </aside>
+
       <section class="hero" id="overview">
         <div>
           <div class="eyebrow"><span class="pulse-dot"></span> Installed, smoke-tested, and now visualized</div>
@@ -1203,9 +1293,9 @@
             <span>Not “lots of agents at once.” The useful thing is separated judgment: builders build, inspectors inspect, the foreman arbitrates, and nobody grades their own homework.</span>
           </div>
           <div class="hero-actions">
+            <a class="button repo-primary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get Swarm Dispatch</a>
             <a class="button" href="#codex">View Codex Edition</a>
             <a class="button secondary" href="#claude">View Claude Edition</a>
-            <a class="button secondary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get The Skill</a>
           </div>
           <div class="hero-meta" aria-label="Swarm Dispatch summary metrics">
             <div class="metric"><strong>7</strong><span>dispatch loop moves from frame to synthesize</span></div>
