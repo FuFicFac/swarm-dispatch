@@ -10,6 +10,8 @@ frame the finish line -> split lanes -> assign owners -> harvest results -> reas
 
 This repo contains the public Codex skill, a Claude-compatible plugin version, examples, and a visual explainer that can be published with GitHub Pages.
 
+Live visual explainer: [https://fuficfac.github.io/swarm-dispatch/](https://fuficfac.github.io/swarm-dispatch/)
+
 ## What Is Included
 
 | Path | Purpose |
@@ -48,17 +50,13 @@ plugins/claude/swarm-dispatch/.claude-plugin/plugin.json
 
 ## Publish The Visual Explainer
 
-GitHub Pages can serve the visual explainer from:
+GitHub Pages serves the visual explainer from:
 
 ```text
 docs/
 ```
 
-Configure Pages to use the `main` branch and `/docs` folder. The expected URL format is:
-
-```text
-https://<github-user>.github.io/swarm-dispatch/
-```
+Configured Pages URL: [https://fuficfac.github.io/swarm-dispatch/](https://fuficfac.github.io/swarm-dispatch/)
 
 ## Safety Note
 

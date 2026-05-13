@@ -1185,6 +1185,7 @@
         <a href="#build-story">Build Story</a>
         <a href="#proof">Proof</a>
         <a href="#examples">Examples</a>
+        <a href="#get">Get It</a>
         <a href="#sources">Sources</a>
       </nav>
     </div>
@@ -1204,6 +1205,7 @@
           <div class="hero-actions">
             <a class="button" href="#codex">View Codex Edition</a>
             <a class="button secondary" href="#claude">View Claude Edition</a>
+            <a class="button secondary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get The Skill</a>
           </div>
           <div class="hero-meta" aria-label="Swarm Dispatch summary metrics">
             <div class="metric"><strong>7</strong><span>dispatch loop moves from frame to synthesize</span></div>
@@ -1600,13 +1602,51 @@
         </div>
       </section>
 
+      <section id="get">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Get Swarm Dispatch</p>
+            <h2>Install the skill or inspect the source</h2>
+          </div>
+          <p class="section-copy">The live explainer and the public repo now point at each other. Start from the repo if you want the files; stay here if you want the operating picture first.</p>
+        </div>
+        <div class="grid cols-3">
+          <article class="panel example">
+            <div class="example-top">
+              <h3>GitHub Repo</h3>
+              <span class="example-tag">Source</span>
+            </div>
+            <p>Get the Codex skill, Claude-compatible plugin source, docs, examples, and this Pages site.</p>
+            <p><a class="button" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Open GitHub Repo</a></p>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>Codex Install</h3>
+              <span class="example-tag" style="background:var(--blue-soft);color:#254d7a">Codex</span>
+            </div>
+            <p>Copy the public skill folder into your Codex skills directory.</p>
+            <div class="callout"><strong>From repo:</strong> <code>skills/swarm-dispatch/</code><br><strong>To local install:</strong> <code>~/.codex/skills/swarm-dispatch/</code></div>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>Claude Plugin</h3>
+              <span class="example-tag" style="background:var(--coral-soft);color:#893324">Claude</span>
+            </div>
+            <p>Use the Claude-compatible plugin source folder, or package it for your plugin loader.</p>
+            <div class="callout"><strong>Plugin source:</strong> <code>plugins/claude/swarm-dispatch/</code><br><strong>Manifest:</strong> <code>.claude-plugin/plugin.json</code></div>
+          </article>
+        </div>
+      </section>
+
       <section id="sources">
         <div class="section-head">
           <div>
             <p class="section-kicker">Source Trail</p>
             <h2>What this page is grounded in</h2>
           </div>
-          <p class="section-copy">These are the local source files used to build the visual. The goal is not decoration; it is a readable operating picture of the actual installed system.</p>
+          <p class="section-copy">These are the public repo files used to build the visual. The goal is not decoration; it is a readable operating picture of the actual installable system.</p>
         </div>
         <div class="grid cols-2">
           <div class="panel">
@@ -1625,8 +1665,8 @@
               <li>examples/interactive-map-finishing-pass.md</li>
               <li>examples/public-docs-deluxe-review.md</li>
               <li>docs/agent-surfaces.md</li>
-              <li>~/.codex/skills/swarm-dispatch/SKILL.md</li>
               <li>docs/local-smoke-test.md</li>
+              <li><a href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">github.com/FuFicFac/swarm-dispatch</a></li>
             </ul>
           </div>
         </div>
@@ -1635,7 +1675,7 @@
   </main>
 
   <footer>
-    <div class="shell">Built as a standalone HTML explainer for the Swarm Dispatch pattern. Open from disk or serve locally; Three.js is loaded from a CDN when network is available.</div>
+    <div class="shell">Built as a standalone HTML explainer for the Swarm Dispatch pattern. Get the public skill and plugin source at <a href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">github.com/FuFicFac/swarm-dispatch</a>.</div>
   </footer>
 
   <script type="module">
