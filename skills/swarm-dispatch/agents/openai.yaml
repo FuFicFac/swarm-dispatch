@@ -1,0 +1,4 @@
+interface:
+  display_name: "Swarm Dispatch"
+  short_description: "Run rolling multi-agent dispatch."
+  default_prompt: "Use Swarm Dispatch: frame the finish line, split non-overlapping lanes, assign bounded workers or CLI agents, keep the main thread on the critical path, harvest and reassign until the work is genuinely done, then synthesize changes, verification, and remaining risks."
