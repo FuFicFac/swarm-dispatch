@@ -44,7 +44,7 @@ ollama list
 
 Default routing when available:
 
-- **Cursor `agent` / `cursor-agent`:** primary external implementation worker.
+- **Cursor `agent` / `cursor-agent` / Composer 2:** primary external implementation worker and token-efficiency catalyst. Use expensive frontier models for planning, inspection, and adjudication; use Cursor's coding-tuned lane for bounded code-writing.
 - **Claude `claude -p`:** review, planning, alternate implementation analysis, or a second implementation worker when Cursor is busy.
 - **Hermes `hermes chat -q`:** local Hermes/OpenClaw-flavored reasoning, skill-aware research, or worktree-capable agent lanes.
 - **Ollama `ollama run <model>`:** cheap narrow prompts with available cloud/local models.
@@ -56,7 +56,7 @@ Prefer the cheapest capable model/agent for each lane. Expensive or high-reasoni
 
 When the user asks for the preferred build swarm, use this hierarchy:
 
-- **Builders:** Cursor Agent CLI, small/cheap workers, and low-effort Codex subagents. They do bounded implementation, cleanup, tests, and narrow fixes.
+- **Builders:** Cursor Agent CLI / Composer 2, small/cheap workers, and low-effort Codex subagents. Cursor is especially valuable as the high-throughput coding lane: send it precise plans and bounded write sets, then spend premium-model attention on review and integration.
 - **Inspector:** the strongest currently available reviewer model/agent. Use it for judgment, not routine implementation.
 - **Foreman:** main Codex coordinates, judges inspector reports, resolves disagreements, assigns fix lanes, and verifies final results.
 

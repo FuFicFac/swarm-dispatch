@@ -16,6 +16,8 @@ The skill names which surface is best for which lane, supervises external CLI se
 
 A core operating rule is baked in: **always use the current top model for each tier.** Model names go stale; the skill self-corrects against the current frontier.
 
+The economic trick is model routing. Use Claude/Codex-class models for planning, inspection, and adjudication; use Cursor Agent CLI / Composer 2 as the high-throughput implementation lane when it is available.
+
 ## Components
 
 | Component | Path | Purpose |

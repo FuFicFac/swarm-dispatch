@@ -22,6 +22,27 @@ Swarm Dispatch is a practical orchestration loop for agentic work. It treats the
 | Inspector | Reviews output for regressions, risks, and missing verification |
 | Adjudicator | Resolves conflicts between independent reviews |
 
+## Token Efficiency
+
+Swarm Dispatch is not just a quality-control pattern. It is also a cost-routing pattern.
+
+Use premium models for high-leverage cognition:
+
+- deciding what should be built
+- splitting work into safe lanes
+- reviewing architecture
+- inspecting regressions
+- adjudicating conflicting reports
+
+Use specialized coding surfaces, especially Cursor Composer 2 when available, for bounded implementation work:
+
+- applying a known plan
+- editing assigned files
+- wiring UI or API changes
+- running tests and reporting changed files
+
+This preserves expensive frontier-model tokens for judgment while letting a coding-tuned implementation lane do the high-volume code generation.
+
 ## When To Use It
 
 Use Swarm Dispatch when a task benefits from parallel work, independent verification, or repeated reassignment. It is especially useful for public releases, substantial implementation, code review, research synthesis, documentation packages, and visual production.

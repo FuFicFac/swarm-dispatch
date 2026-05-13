@@ -269,7 +269,7 @@
 
     .hero-meta {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
       margin-top: 30px;
       max-width: 760px;
@@ -1261,6 +1261,7 @@
       </div>
       <nav class="nav" aria-label="Page sections">
         <a href="#overview">Overview</a>
+        <a href="#efficiency">Token Math</a>
         <a href="#codex">Codex Edition</a>
         <a href="#claude">Claude Edition</a>
         <a href="#build-story">Build Story</a>
@@ -1290,7 +1291,7 @@
           <p class="dek">Swarm Dispatch turns agent work from a one-shot handoff into a rolling command system: frame the outcome, split the lanes, assign bounded workers, harvest results, reassign, and keep going until the work is actually done.</p>
           <div class="thesis-strip">
             <b>CORE</b>
-            <span>Not “lots of agents at once.” The useful thing is separated judgment: builders build, inspectors inspect, the foreman arbitrates, and nobody grades their own homework.</span>
+            <span>Not “lots of agents at once.” The useful thing is separated judgment and cost routing: frontier models think and inspect; Cursor Composer 2 turns bounded plans into code.</span>
           </div>
           <div class="hero-actions">
             <a class="button repo-primary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get Swarm Dispatch</a>
@@ -1300,6 +1301,7 @@
           <div class="hero-meta" aria-label="Swarm Dispatch summary metrics">
             <div class="metric"><strong>7</strong><span>dispatch loop moves from frame to synthesize</span></div>
             <div class="metric"><strong>2</strong><span>foreman editions: Codex and Claude</span></div>
+            <div class="metric"><strong>$20</strong><span>Cursor Pro monthly reference price at publication</span></div>
             <div class="metric"><strong>6+</strong><span>agent surfaces: subagents, Cursor, Claude, Codex, Hermes, Ollama</span></div>
           </div>
         </div>
@@ -1362,13 +1364,64 @@
         </div>
       </section>
 
+      <section id="efficiency">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Token Efficiency</p>
+            <h2>Cursor is the catalyst</h2>
+          </div>
+          <p class="section-copy">The economic win is routing. Use Claude and Codex for the expensive work they are best at: architecture, decomposition, judgment, inspection, and adjudication. Use Cursor Composer 2 as the coding-tuned implementation engine that turns bounded instructions into working files.</p>
+        </div>
+        <div class="grid cols-3">
+          <article class="panel example">
+            <div class="example-top">
+              <h3>1. Think With Frontier Models</h3>
+              <span class="example-tag">High leverage</span>
+            </div>
+            <p>Claude and Codex frame the finish line, split lanes, design the patch, identify risks, and decide what must be true before acceptance.</p>
+            <div class="bars">
+              <div class="bar-row"><span>Planning</span><span class="bar-track"><span class="bar-fill coral" style="width:94%"></span></span><span class="bar-value">94</span></div>
+              <div class="bar-row"><span>Judgment</span><span class="bar-track"><span class="bar-fill amber" style="width:98%"></span></span><span class="bar-value">98</span></div>
+              <div class="bar-row"><span>Bulk code</span><span class="bar-track"><span class="bar-fill" style="width:32%"></span></span><span class="bar-value">32</span></div>
+            </div>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>2. Build With Composer 2</h3>
+              <span class="example-tag" style="background:var(--amber-soft);color:#6a4300">Cost engine</span>
+            </div>
+            <p>Cursor's coding-tuned lane does the high-volume implementation: applying precise plans, editing assigned files, wiring UI, and reporting changed files plus checks.</p>
+            <div class="callout"><strong>Practical pattern:</strong> Spend premium tokens on the plan. Spend Cursor execution on the code.</div>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>3. Inspect Before Accept</h3>
+              <span class="example-tag" style="background:var(--blue-soft);color:#254d7a">Quality gate</span>
+            </div>
+            <p>The foreman sends the result back through reviewers. This keeps Cursor fast without asking it to be the final judge of its own implementation.</p>
+            <div class="bars">
+              <div class="bar-row"><span>Speed</span><span class="bar-track"><span class="bar-fill green" style="width:88%"></span></span><span class="bar-value">88</span></div>
+              <div class="bar-row"><span>Cost control</span><span class="bar-track"><span class="bar-fill amber" style="width:91%"></span></span><span class="bar-value">91</span></div>
+              <div class="bar-row"><span>Self-review</span><span class="bar-track"><span class="bar-fill coral" style="width:24%"></span></span><span class="bar-value">24</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>The real trick</h3>
+          <p>Swarm Dispatch turns model choice into a workflow decision. Cursor is not a backup worker; it is the implementation flywheel. Claude and Codex create the blueprint and quality gates. Cursor executes the bounded build. The foreman harvests, checks, and reassigns until the artifact is actually done.</p>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:0">Price references are publication-time context, not a promise about future Cursor pricing. Check the official Cursor pricing page before making a buying decision.</p>
+        </div>
+      </section>
+
       <section id="codex">
         <div class="section-head">
           <div>
             <p class="section-kicker">Page One</p>
             <h2>Codex Foreman Edition</h2>
           </div>
-          <p class="section-copy">This is the installed local Codex skill: Codex orchestrates the work, native Codex subagents cover internal lanes, and external CLIs become supervised workers rather than vague background promises.</p>
+          <p class="section-copy">This is the installed local Codex skill: Codex orchestrates the work, native Codex subagents cover internal lanes, and Cursor becomes the primary implementation catalyst instead of a vague background helper.</p>
         </div>
 
         <div class="grid cols-2">
@@ -1405,7 +1458,7 @@
         <div class="grid cols-3" style="margin-top:16px">
           <div class="panel">
             <h3>Best Build Lane</h3>
-            <p>Cursor Agent CLI owns substantial implementation because it is strong at bounded code-writing and can report changed files plus verification commands.</p>
+            <p>Cursor Agent CLI / Composer 2 owns substantial implementation because it is coding-tuned, cost-efficient, and strong at bounded code-writing with changed files plus verification commands.</p>
             <div class="bars">
               <div class="bar-row"><span>Implementation</span><span class="bar-track"><span class="bar-fill" style="width:92%"></span></span><span class="bar-value">92</span></div>
               <div class="bar-row"><span>Planning</span><span class="bar-track"><span class="bar-fill amber" style="width:68%"></span></span><span class="bar-value">68</span></div>

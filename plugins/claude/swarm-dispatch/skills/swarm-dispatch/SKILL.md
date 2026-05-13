@@ -36,7 +36,7 @@ Before dispatching, confirm you are calling the current frontier model for each 
 | Surface | Invocation | Best For |
 |---|---|---|
 | **Task-tool subagents** (Plan, Explore, general-purpose) | Native Task tool in Claude-compatible environments | Internal parallel research, repo exploration, bounded planning, verification |
-| **Cursor Agent CLI** | `agent --print --output-format text --trust --workspace ...` via Bash | Substantial implementation, app scaffolding, refactors, code-writing lanes |
+| **Cursor Agent CLI / Composer 2** | `agent --print --output-format text --trust --workspace ...` via Bash | Substantial implementation, app scaffolding, refactors, code-writing lanes, token-efficient execution |
 | **Claude Code CLI** | `claude -p --model <tier> "..."` via Bash | Cross-instance Claude work, model-tiered review, planning, alternate implementation |
 | **Codex CLI** | `codex ...` via Bash | Cross-family second opinion, alternative implementations, OpenAI-ecosystem work, rate-limit relief when Claude is throttled |
 | **Hermes CLI** | `hermes chat -q "..."` via Bash | Hermes/OpenClaw-aligned lanes, skill-aware research, worktree-capable execution |
@@ -67,7 +67,7 @@ Demoted from the Codex version: Codex is **not** the default primary implementat
 
 Default hierarchy for substantial builds:
 
-- **Builders:** Cursor Agent CLI, Haiku-class Task-tool subagents, cheap Codex subagents. Bounded implementation, cleanup, tests, narrow fixes.
+- **Builders:** Cursor Agent CLI / Composer 2, Haiku-class Task-tool subagents, cheap Codex subagents. Cursor is the preferred high-throughput coding lane when available; reserve premium model attention for planning, inspection, adjudication, and integration.
 - **Inspectors:** Claude Opus (current top) + Codex (current top frontier). Review and judgment only; no silent fixes before reporting.
 - **Foreman:** main Claude thread. Orchestrates, arbitrates, integrates, verifies final result.
 

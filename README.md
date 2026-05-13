@@ -12,6 +12,12 @@ This repo contains the public Codex skill, a Claude-compatible plugin version, e
 
 Live visual explainer: [https://fuficfac.github.io/swarm-dispatch/](https://fuficfac.github.io/swarm-dispatch/)
 
+## Why Cursor Is The Catalyst
+
+Swarm Dispatch is also a token-efficiency strategy. The expensive frontier models are used where they matter most: architecture, decomposition, judgment, review, and final adjudication. Cursor Composer 2 can then act as the high-throughput implementation lane, turning those plans into code at predictable subscription economics.
+
+At the time this repo was published, Cursor's public pricing listed Pro at $20/month, and Composer 2 was positioned as Cursor's specialized coding model. The point is not the exact price forever; the point is the routing pattern: keep premium-model tokens on thinking and inspection, then push bounded coding work into the specialized coding surface.
+
 ## What Is Included
 
 | Path | Purpose |
