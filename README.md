@@ -16,8 +16,9 @@ This repo contains the public Codex skill, a Claude-compatible plugin version, e
 |---|---|
 | `skills/swarm-dispatch/` | Codex skill source |
 | `plugins/claude/swarm-dispatch/` | Claude-compatible plugin source |
-| `site/` | Standalone HTML visual explainer for GitHub Pages |
-| `docs/` | Public protocol notes |
+| `docs/index.html` | Standalone HTML visual explainer for GitHub Pages |
+| `docs/` | Public protocol notes and the Pages entrypoint |
+| `site/` | Source copy of the standalone HTML visual explainer |
 | `examples/` | Copyable dispatch examples |
 
 ## Install For Codex
@@ -50,10 +51,10 @@ plugins/claude/swarm-dispatch/.claude-plugin/plugin.json
 GitHub Pages can serve the visual explainer from:
 
 ```text
-site/
+docs/
 ```
 
-Configure Pages to use the `main` branch and `/site` folder. The expected URL format is:
+Configure Pages to use the `main` branch and `/docs` folder. The expected URL format is:
 
 ```text
 https://<github-user>.github.io/swarm-dispatch/
