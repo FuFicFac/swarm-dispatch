@@ -25,6 +25,7 @@ At the time this repo was published, Cursor's public pricing listed Pro at $20/m
 | `skills/swarm-dispatch/` | Codex skill source |
 | `plugins/claude/swarm-dispatch/` | Claude-compatible plugin source |
 | `docs/index.html` | Standalone HTML visual explainer for GitHub Pages |
+| `docs/pages/` | Focused explainer pages for mobile/video-friendly navigation |
 | `docs/` | Public protocol notes and the Pages entrypoint |
 | `site/` | Source copy of the standalone HTML visual explainer |
 | `examples/` | Copyable dispatch examples |

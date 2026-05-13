@@ -178,6 +178,66 @@
       box-shadow: 5px 5px 0 rgba(255, 251, 242, 0.55);
     }
 
+    .start-map {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.05fr repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .start-card {
+      min-height: 118px;
+      border: 1px solid var(--line);
+      background: rgba(255, 251, 242, 0.84);
+      border-radius: var(--radius);
+      padding: 14px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .start-card.primary {
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 6px 6px 0 rgba(18, 20, 23, 0.18);
+    }
+
+    .start-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .start-card b {
+      font-size: 18px;
+      line-height: 1.05;
+    }
+
+    .start-card span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .start-card.primary span {
+      color: rgba(245, 241, 232, 0.74);
+    }
+
+    .start-card em {
+      margin-top: 12px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .start-card.primary em {
+      color: var(--amber);
+    }
+
     .dispatch-image {
       position: relative;
       margin: 22px 0 0;
@@ -1241,8 +1301,16 @@
         width: 100%;
       }
 
+      .start-map {
+        grid-template-columns: 1fr;
+      }
+
+      .start-card {
+        min-height: auto;
+      }
+
       .dispatch-image {
-        min-height: 260px;
+        min-height: 190px;
         box-shadow: 5px 5px 0 rgba(18, 20, 23, 0.92);
       }
 
@@ -1337,14 +1405,13 @@
       </div>
       <nav class="nav" aria-label="Page sections">
         <a href="#overview">Overview</a>
-        <a href="#efficiency">Token Math</a>
-        <a href="#codex">Codex Edition</a>
-        <a href="#claude">Claude Edition</a>
-        <a href="#build-story">Build Story</a>
-        <a href="#proof">Proof</a>
-        <a href="#examples">Examples</a>
-        <a href="#get">Get It</a>
-        <a href="#sources">Sources</a>
+        <a href="pages/efficiency.html">Token Math</a>
+        <a href="pages/dispatch-loop.html">Dispatch Loop</a>
+        <a href="pages/codex-edition.html">Codex Edition</a>
+        <a href="pages/claude-edition.html">Claude Edition</a>
+        <a href="pages/examples.html">Examples</a>
+        <a href="pages/install.html">Get It</a>
+        <a href="https://github.com/FuFicFac/swarm-dispatch/tree/main/docs" target="_blank" rel="noopener">Docs</a>
         <a class="repo-nav" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">GitHub Repo</a>
       </nav>
     </div>
@@ -1359,6 +1426,29 @@
         </div>
         <a class="button" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Open Repo</a>
       </aside>
+
+      <nav class="start-map" aria-label="Start here">
+        <a class="start-card primary" href="pages/efficiency.html">
+          <b>Start with the money idea.</b>
+          <span>Premium models think and inspect. Cursor/Composer 2 executes the build lane.</span>
+          <em>Token Math</em>
+        </a>
+        <a class="start-card" href="pages/dispatch-loop.html">
+          <b>What is dispatch?</b>
+          <span>A foreman routes work packets, harvests results, and keeps switching lanes.</span>
+          <em>Dispatch Loop</em>
+        </a>
+        <a class="start-card" href="pages/codex-edition.html">
+          <b>How does Codex use it?</b>
+          <span>Codex coordinates native subagents and external coding tools.</span>
+          <em>Codex Edition</em>
+        </a>
+        <a class="start-card" href="pages/install.html">
+          <b>How do I get it?</b>
+          <span>Install the Codex skill, inspect the Claude plugin, or fork the repo.</span>
+          <em>Install Links</em>
+        </a>
+      </nav>
 
       <figure class="dispatch-image" aria-label="Rail yard dispatch metaphor for Swarm Dispatch">
         <img src="assets/swarm-dispatch-rail-yard-banner.png" alt="A cinematic rail yard dispatch tower routing glowing task trains through switch tracks toward a final inspection gate." width="1983" height="793">
@@ -1379,8 +1469,8 @@
           </div>
           <div class="hero-actions">
             <a class="button repo-primary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get Swarm Dispatch</a>
-            <a class="button" href="#codex">View Codex Edition</a>
-            <a class="button secondary" href="#claude">View Claude Edition</a>
+            <a class="button" href="pages/efficiency.html">Start With Token Math</a>
+            <a class="button secondary" href="pages/dispatch-loop.html">What Is Dispatch?</a>
           </div>
           <div class="hero-meta" aria-label="Swarm Dispatch summary metrics">
             <div class="metric"><strong>7</strong><span>dispatch loop moves from frame to synthesize</span></div>
@@ -2058,7 +2148,7 @@
       requestAnimationFrame(animate);
     }
 
-    const navLinks = [...document.querySelectorAll('.nav a')];
+    const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
     const sections = navLinks.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
