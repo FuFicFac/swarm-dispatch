@@ -1,6 +1,6 @@
 # swarm-dispatch
 
-Claude-foreman mixed-agent orchestration as a Claude-compatible plugin.
+Claude-foreman mixed-agent orchestration as a Claude Code / Cowork plugin.
 
 ## What it does
 
@@ -16,7 +16,14 @@ The skill names which surface is best for which lane, supervises external CLI se
 
 A core operating rule is baked in: **always use the current top model for each tier.** Model names go stale; the skill self-corrects against the current frontier.
 
-The economic trick is model routing. Use Claude/Codex-class models for planning, inspection, and adjudication; use Cursor Agent CLI / Composer 2 as the high-throughput implementation lane when it is available.
+## Recommended companion
+
+Install this plugin alongside Addy Osmani's [`agent-skills`](https://github.com/addyosmani/agent-skills) plugin when running engineering swarms.
+
+- `swarm-dispatch` is the orchestration layer: foreman loop, lane ownership, builder/inspector hierarchy, CLI supervision, harvest and reassignment.
+- `agent-skills` is the methodology layer: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/code-simplify`, `/ship`, plus SDLC skills and reviewer/test/security agents.
+
+Use the combination for apps, sites, CLIs, infrastructure, integrations, and public-release work. Do not force it onto creative/editorial swarms that already have named rosters and prose-specific review loops.
 
 ## Components
 
@@ -48,7 +55,14 @@ It uses whichever surfaces are installed. Missing agents are skipped, not errors
 
 ## Installation
 
-Package or install this folder with your Claude-compatible plugin loader. Validate with:
+Install Addy's methodology layer first:
+
+```text
+/plugin marketplace add https://github.com/addyosmani/agent-skills.git
+/plugin install agent-skills@addy-agent-skills
+```
+
+Then install Swarm Dispatch from this repo or from a packaged plugin archive. Validate the plugin manifest with:
 
 ```bash
 claude plugin validate .claude-plugin/plugin.json
@@ -56,9 +70,7 @@ claude plugin validate .claude-plugin/plugin.json
 
 ## Genesis
 
-## Origin
-
-This public release is the Claude-foreman counterpart to the Codex `$swarm-dispatch` skill. Claude orchestrates instead of being orchestrated, and the high-stakes inspector loop uses parallel review plus adjudication so independent findings do not contaminate each other.
+Pattern named during a visual-site finishing pass on 2026-05-11. The Codex-foreman version made Codex the dispatcher; this is the Claude-foreman counterpart. Version 0.2.0 adds the recommended `agent-skills` methodology layer so engineering swarms have both orchestration and lane-level craft discipline.
 
 ## License
 

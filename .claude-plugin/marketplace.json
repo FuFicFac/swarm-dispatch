@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "swarm-dispatch",
+  "description": "Swarm Dispatch Claude Code plugin marketplace. Foreman-style mixed-agent orchestration with Addy Osmani's agent-skills as the recommended engineering methodology companion.",
+  "owner": {
+    "name": "Ekello Harrid"
+  },
+  "plugins": [
+    {
+      "name": "swarm-dispatch",
+      "description": "Claude-foreman mixed-agent orchestration. Rolling dispatch loop across Task-tool subagents and external CLI agents with Lean and Deluxe inspector loops.",
+      "category": "orchestration",
+      "source": "./plugins/claude/swarm-dispatch",
+      "homepage": "https://github.com/FuFicFac/swarm-dispatch"
+    }
+  ]
+}

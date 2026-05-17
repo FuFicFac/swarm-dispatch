@@ -2,7 +2,7 @@
 name: swarm-dispatch
 description: >
   This skill should be used when the user asks for a "swarm," "dispatch agents," "delegate," "parallel agents," "multi-agent," "build with cheap agents," "use Cursor/Codex/Hermes," "foreman the build," "run agents in parallel," "inspector loop," "Opus inspector," or asks Claude to coordinate multiple subagents and/or external CLI agents on a single objective. Use whenever the work benefits from a rolling dispatch loop (assign → harvest → reassign → integrate) instead of single-shot delegation.
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Swarm Dispatch (Claude Foreman Edition)
@@ -15,11 +15,40 @@ This is the Claude-as-orchestrator port of the Codex `$swarm-dispatch` skill. Th
 
 **Always invoke the current top model for each tier.** Do not hardcode model names — they go stale within months.
 
-- **Inspector tier** (judgment-heavy): current top Claude Opus + current top Codex/GPT model.
+- **Inspector tier** (judgment-heavy): current top Claude Opus + current top Codex/GPT (GPT-5.5 as of writing, or whatever has shipped since).
 - **Builder tier** (implementation): current Cursor Agent CLI default + current Haiku-class model.
 - **Cheap tier** (classification, summarization, brainstorm): current Ollama cloud lineup — check `ollama list` at runtime.
 
 Before dispatching, confirm you are calling the current frontier model for each tier. If a named model in this skill is no longer the leader, use its successor. Self-correcting is the whole point.
+
+## Recommended Companion: `addyosmani/agent-skills`
+
+Swarm-dispatch orchestrates *how* agents fan out. It does not by itself define *what methodology* each lane follows. For engineering-flavored lanes, the default playbook is **Addy Osmani's `agent-skills` plugin** — 7 slash commands (`/spec`, `/plan`, `/build`, `/test`, `/review`, `/code-simplify`, `/ship`), 23 auto-activated skills covering the full SDLC, and 3 named agents (`code-reviewer`, `security-auditor`, `test-engineer`). MIT-licensed, available on the official Claude Code marketplace.
+
+**Install:**
+```
+/plugin marketplace add https://github.com/addyosmani/agent-skills.git
+/plugin install agent-skills@addy-agent-skills
+```
+
+**Lane → command mapping (engineering swarms):**
+
+| Dispatch step / lane | Addy command | Backing skills / agent |
+|---|---|---|
+| Step 1: Frame the outcome | `/spec` | `spec-driven-development`, `idea-refine`, `interview-me` |
+| Step 2: Split lanes | `/plan` | `planning-and-task-breakdown` |
+| Builder lane | `/build` | `incremental-implementation`, `source-driven-development`, `frontend-ui-engineering`, `api-and-interface-design` |
+| Test gate | `/test` | `test-driven-development`, `doubt-driven-development`, `test-engineer` |
+| Lean Inspector | `/review` | `code-review-and-quality`, `code-reviewer` |
+| Deluxe Inspector — Claude side | `/review` | `code-reviewer` |
+| Deluxe Inspector — Codex side | external | `security-auditor` (for security-adjacent runs) |
+| Fix-Planner step | — | `debugging-and-error-recovery` |
+| Code-health pass | `/code-simplify` | `code-simplification`, `performance-optimization` |
+| Step 7: Synthesize / ship | `/ship` | `shipping-and-launch`, `ci-cd-and-automation`, `git-workflow-and-versioning`, `documentation-and-adrs` |
+| Cross-loop context hygiene | (auto) | `context-engineering` |
+| Security gates (Deluxe) | (auto) | `security-and-hardening` |
+
+**Scope boundary.** Apply this layer to engineering swarms (apps, infra, CLI, sites). Do **not** force it onto creative swarms — `new-york-editors`, `obvious`, `editorial-writing-room`, `book-brain-builder`, `auto-book-builder`, `dossier-evaluation-squad`, and `humanizer` keep their own named-agent rosters. Mixed swarms (a creator-tool app built around fiction-tool concepts) use engineering skills for the code and the creative roster only for genuinely literary prose/UX copy work.
 
 ## Dispatch Loop (7 Steps)
 
@@ -35,8 +64,8 @@ Before dispatching, confirm you are calling the current frontier model for each 
 
 | Surface | Invocation | Best For |
 |---|---|---|
-| **Task-tool subagents** (Plan, Explore, general-purpose) | Native Task tool in Claude-compatible environments | Internal parallel research, repo exploration, bounded planning, verification |
-| **Cursor Agent CLI / Composer 2** | `agent --print --output-format text --trust --workspace ...` via Bash | Substantial implementation, app scaffolding, refactors, code-writing lanes, token-efficient execution |
+| **Task-tool subagents** (Plan, Explore, general-purpose) | Native Task tool in Claude Code / Cowork | Internal parallel research, repo exploration, bounded planning, verification |
+| **Cursor Agent CLI** | `agent --print --output-format text --trust --workspace ...` via Bash | Substantial implementation, app scaffolding, refactors, code-writing lanes |
 | **Claude Code CLI** | `claude -p --model <tier> "..."` via Bash | Cross-instance Claude work, model-tiered review, planning, alternate implementation |
 | **Codex CLI** | `codex ...` via Bash | Cross-family second opinion, alternative implementations, OpenAI-ecosystem work, rate-limit relief when Claude is throttled |
 | **Hermes CLI** | `hermes chat -q "..."` via Bash | Hermes/OpenClaw-aligned lanes, skill-aware research, worktree-capable execution |
@@ -67,7 +96,7 @@ Demoted from the Codex version: Codex is **not** the default primary implementat
 
 Default hierarchy for substantial builds:
 
-- **Builders:** Cursor Agent CLI / Composer 2, Haiku-class Task-tool subagents, cheap Codex subagents. Cursor is the preferred high-throughput coding lane when available; reserve premium model attention for planning, inspection, adjudication, and integration.
+- **Builders:** Cursor Agent CLI, Haiku-class Task-tool subagents, cheap Codex subagents. Bounded implementation, cleanup, tests, narrow fixes.
 - **Inspectors:** Claude Opus (current top) + Codex (current top frontier). Review and judgment only; no silent fixes before reporting.
 - **Foreman:** main Claude thread. Orchestrates, arbitrates, integrates, verifies final result.
 
@@ -307,4 +336,6 @@ Close with a concise synthesis rather than a transcript of every agent message.
 
 ## Genesis
 
-This Claude-foreman edition was authored as a public counterpart to the Codex `$swarm-dispatch` skill. The inspector loop is upgraded from sequential review to parallel-and-adjudicated review for high-stakes lanes.
+Pattern named and refined during a visual-site finishing pass on 2026-05-11. The Codex `$swarm-dispatch` skill was the first formalization, with Codex as foreman. This Claude-foreman edition was authored alongside it, with the inspector loop upgraded from sequential review to parallel inspection plus adjudication for high-stakes lanes.
+
+Version 0.2.0 adds the recommended `addyosmani/agent-skills` companion so engineering swarms have both orchestration and lane-level methodology.

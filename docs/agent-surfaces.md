@@ -15,6 +15,16 @@ The foreman should inventory the fleet at runtime and choose the cheapest capabl
 
 Cursor is the catalyst when available: use it for high-volume coding work after Claude or Codex has already clarified the plan, risks, and acceptance criteria.
 
+For engineering swarms, install Addy Osmani's `agent-skills` beside Swarm Dispatch and use it as the lane methodology:
+
+- `/spec` before vague work
+- `/plan` before dispatching lanes
+- `/build` for bounded implementation
+- `/test` for verification
+- `/review` for findings-first inspection
+- `/code-simplify` for code health
+- `/ship` for release and handoff
+
 ```bash
 for c in cursor-agent agent claude codex hermes ollama; do command -v "$c"; done
 ollama list

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Swarm Dispatch Visual System</title>
+  <link rel="icon" href="data:,"><title>Swarm Dispatch Visual System</title>
   <script src="scroll-reset.js"></script>
   <style>
     :root {
@@ -182,7 +182,7 @@
     .start-map {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: 1.05fr repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.05fr repeat(4, minmax(0, 1fr));
       gap: 10px;
     }
 
@@ -1406,6 +1406,7 @@
       </div>
       <nav class="nav" aria-label="Page sections">
         <a href="#overview">Overview</a>
+        <a href="#methodology">Methodology Layer</a>
         <a href="pages/efficiency.html">Token Math</a>
         <a href="pages/dispatch-loop.html">Dispatch Loop</a>
         <a href="pages/codex-edition.html">Codex Edition</a>
@@ -1422,8 +1423,8 @@
     <div class="shell">
       <aside class="release-banner" aria-label="Get Swarm Dispatch">
         <div>
-          <strong>Get Swarm Dispatch on GitHub</strong>
-          <span>Download the Codex skill, inspect the Claude-compatible plugin, copy the examples, or fork the public repo.</span>
+          <strong>Swarm Dispatch v0.2.0 adds Addy’s engineering playbook</strong>
+          <span>Swarm Dispatch is the foreman. Addy Osmani’s agent-skills repo supplies the SDLC discipline for each engineering lane.</span>
         </div>
         <a class="button" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Open Repo</a>
       </aside>
@@ -1433,6 +1434,11 @@
           <b>Start with the money idea.</b>
           <span>Premium models think and inspect. Cursor/Composer 2 executes the build lane.</span>
           <em>Token Math</em>
+        </a>
+        <a class="start-card" href="#methodology">
+          <b>What changed in v0.2.0?</b>
+          <span>Addy’s agent-skills now acts as the engineering methodology layer.</span>
+          <em>Methodology</em>
         </a>
         <a class="start-card" href="pages/dispatch-loop.html">
           <b>What is dispatch?</b>
@@ -1461,12 +1467,12 @@
 
       <section class="hero" id="overview">
         <div>
-          <div class="eyebrow"><span class="pulse-dot"></span> Installed, smoke-tested, and now visualized</div>
+          <div class="eyebrow"><span class="pulse-dot"></span> v0.2.0: orchestration plus methodology</div>
           <h1>One foreman.<br>Many lanes.<br>No idle agents.</h1>
           <p class="dek">Swarm Dispatch turns agent work from a one-shot handoff into a rolling command system: frame the outcome, split the lanes, assign bounded workers, harvest results, reassign, and keep going until the work is actually done.</p>
           <div class="thesis-strip">
             <b>CORE</b>
-            <span>Not “lots of agents at once.” The useful thing is separated judgment and cost routing: frontier models think and inspect; Cursor Composer 2 turns bounded plans into code.</span>
+            <span>Not “lots of agents at once.” The useful thing is separated judgment, cost routing, and lane discipline: Swarm Dispatch coordinates; Addy’s agent-skills defines how engineering lanes behave.</span>
           </div>
           <div class="hero-actions">
             <a class="button repo-primary" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Get Swarm Dispatch</a>
@@ -1476,7 +1482,7 @@
           <div class="hero-meta" aria-label="Swarm Dispatch summary metrics">
             <div class="metric"><strong>7</strong><span>dispatch loop moves from frame to synthesize</span></div>
             <div class="metric"><strong>2</strong><span>foreman editions: Codex and Claude</span></div>
-            <div class="metric"><strong>$20</strong><span>Cursor Pro monthly reference price at publication</span></div>
+            <div class="metric"><strong>7</strong><span>Addy lifecycle commands mapped onto lanes</span></div>
             <div class="metric"><strong>6+</strong><span>agent surfaces: subagents, Cursor, Claude, Codex, Hermes, Ollama</span></div>
           </div>
         </div>
@@ -1536,6 +1542,45 @@
           <div class="loop-step"><span class="step-num">5</span><strong>Harvest</strong><span>Integrate, sharpen, reassign, or close.</span></div>
           <div class="loop-step"><span class="step-num">6</span><strong>Repeat</strong><span>Continue until done or blocked by reality.</span></div>
           <div class="loop-step"><span class="step-num">7</span><strong>Synthesize</strong><span>Close with decision, verification, risks, findings.</span></div>
+        </div>
+      </section>
+
+      <section id="methodology">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Methodology Layer</p>
+            <h2>Swarm Dispatch is the foreman. Addy’s agent-skills are the trade discipline.</h2>
+          </div>
+          <p class="section-copy">The v0.2.0 change is simple: engineering swarms should not freestyle quality. Pair this repo with Addy Osmani’s <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">agent-skills</a> so each lane has a known SDLC playbook.</p>
+        </div>
+        <div class="grid cols-3">
+          <article class="panel example">
+            <div class="example-top">
+              <h3>1. Lock the goal</h3>
+              <span class="example-tag">/spec</span>
+            </div>
+            <p>Start with finish line, done criteria, constraints, assumptions, and question boundaries so workers do not ask broad clarifying questions once dispatched.</p>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>2. Split the shop</h3>
+              <span class="example-tag" style="background:var(--amber-soft);color:#6a4300">/plan + /build</span>
+            </div>
+            <p>Swarm Dispatch assigns lanes and write sets. Addy’s planning and build discipline keeps those lanes incremental, bounded, and verifiable.</p>
+          </article>
+
+          <article class="panel example">
+            <div class="example-top">
+              <h3>3. Inspect before fixing</h3>
+              <span class="example-tag" style="background:var(--blue-soft);color:#254d7a">/test + /review</span>
+            </div>
+            <p>Reviewers report findings first. The foreman arbitrates. Fixes happen after the report, then the swarm moves through simplify and ship.</p>
+          </article>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>Scope boundary</h3>
+          <p>Use this combined stack for engineering work: apps, sites, CLIs, infra, integrations, payment/export paths, and public-release docs. Do not force SDLC skills onto creative swarms; editorial systems need their own named rosters and prose-aware review logic.</p>
         </div>
       </section>
 
@@ -1684,7 +1729,7 @@
               <div class="node inspector">Opus<br>adjudicator</div>
               <div class="node verify">Codex CLI<br>cross-family inspect</div>
             </div>
-            <p>The Claude plugin can live at <strong>plugins/claude/swarm-dispatch.plugin</strong> and contains a command, plugin manifest, README, and skill payload.</p>
+            <p>The Claude plugin source lives at <strong>plugins/claude/swarm-dispatch/</strong> and contains a command, plugin manifest, README, and skill payload. The repo root also includes a marketplace manifest for installation.</p>
             <div class="callout">The Model Currency Rule is the key Claude-side upgrade: call the current top model for each tier instead of hardcoding stale names.</div>
           </article>
 
@@ -1924,9 +1969,9 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">Get Swarm Dispatch</p>
-            <h2>Install the skill or inspect the source</h2>
+            <h2>Install the stack or inspect the source</h2>
           </div>
-          <p class="section-copy">The live explainer and the public repo now point at each other. Start from the repo if you want the files; stay here if you want the operating picture first.</p>
+          <p class="section-copy">The live explainer and the public repo now point at each other. For engineering swarms, install Addy’s agent-skills first, then install Swarm Dispatch.</p>
         </div>
         <div class="grid cols-3">
           <article class="panel example">
@@ -1934,7 +1979,7 @@
               <h3>GitHub Repo</h3>
               <span class="example-tag">Source</span>
             </div>
-            <p>Get the Codex skill, Claude-compatible plugin source, docs, examples, and this Pages site.</p>
+            <p>Get the Codex skill, Claude Code plugin source, docs, examples, marketplace manifest, and this Pages site.</p>
             <p><a class="button" href="https://github.com/FuFicFac/swarm-dispatch" target="_blank" rel="noopener">Open GitHub Repo</a></p>
           </article>
 
@@ -1949,11 +1994,11 @@
 
           <article class="panel example">
             <div class="example-top">
-              <h3>Claude Plugin</h3>
+              <h3>Claude Plugin Pair</h3>
               <span class="example-tag" style="background:var(--coral-soft);color:#893324">Claude</span>
             </div>
-            <p>Use the Claude-compatible plugin source folder, or package it for your plugin loader.</p>
-            <div class="callout"><strong>Plugin source:</strong> <code>plugins/claude/swarm-dispatch/</code><br><strong>Manifest:</strong> <code>.claude-plugin/plugin.json</code></div>
+            <p>Install Addy’s methodology plugin, then install Swarm Dispatch from this repo’s marketplace manifest.</p>
+            <div class="callout"><strong>Addy:</strong> <code>addyosmani/agent-skills</code><br><strong>Swarm:</strong> <code>FuFicFac/swarm-dispatch</code></div>
           </article>
         </div>
       </section>
@@ -1972,7 +2017,9 @@
             <ul class="source-list">
               <li>docs/swarm-dispatch.md</li>
               <li>skills/swarm-dispatch/SKILL.md</li>
-              <li>plugins/claude/swarm-dispatch.plugin</li>
+              <li>plugins/claude/swarm-dispatch/</li>
+              <li>.claude-plugin/marketplace.json</li>
+              <li>https://github.com/addyosmani/agent-skills</li>
               <li>examples/codex-foreman.md</li>
               <li>examples/claude-foreman.md</li>
             </ul>

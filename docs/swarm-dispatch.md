@@ -4,6 +4,7 @@ Swarm Dispatch is a practical orchestration loop for agentic work. It treats the
 
 ## Operating Loop
 
+0. Run Goal Preflight: finish line, done criteria, constraints, assumptions, and question boundaries.
 1. Define the finish line in one concrete sentence.
 2. Split the work into non-overlapping lanes.
 3. Assign each lane to an agent with ownership, boundaries, and a stop condition.
@@ -21,6 +22,24 @@ Swarm Dispatch is a practical orchestration loop for agentic work. It treats the
 | Explorer | Reads code or docs and returns targeted findings |
 | Inspector | Reviews output for regressions, risks, and missing verification |
 | Adjudicator | Resolves conflicts between independent reviews |
+
+## Engineering Methodology Layer
+
+Swarm Dispatch answers the orchestration question: who should work on what, when should the foreman harvest, and how does review stay independent from implementation?
+
+For engineering swarms, pair it with Addy Osmani's [`agent-skills`](https://github.com/addyosmani/agent-skills). Addy's pack supplies the lane-level craft discipline:
+
+| Swarm Dispatch phase | Methodology layer |
+|---|---|
+| Goal Preflight | `/spec`: acceptance criteria, constraints, non-goals |
+| Split lanes | `/plan`: task breakdown and dependencies |
+| Builder work | `/build`: incremental implementation |
+| Verification | `/test`: test and regression discipline |
+| Inspection | `/review`: findings-first quality review |
+| Code health | `/code-simplify`: simplify without behavior drift |
+| Release | `/ship`: handoff, rollout, rollback, and launch notes |
+
+This pairing is meant for apps, infrastructure, CLIs, integrations, and public-release work. Do not replace creative or editorial swarms with SDLC skills; writing swarms need their own prose-aware rosters.
 
 ## Token Efficiency
 

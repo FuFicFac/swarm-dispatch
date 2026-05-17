@@ -1,9 +1,9 @@
 {
   "name": "swarm-dispatch",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Claude-foreman mixed-agent orchestration. Run a rolling dispatch loop (assign → harvest → reassign → integrate) across Task-tool subagents and external CLI agents (Cursor, Codex, Hermes, Ollama, Claude Code). Includes Lean and Deluxe inspector loops with parallel Claude+Codex inspection and Opus adjudication.",
   "author": {
-    "name": "Swarm Dispatch Maintainers"
+    "name": "Ekello Harrid"
   },
   "homepage": "https://github.com/FuFicFac/swarm-dispatch",
   "license": "MIT",

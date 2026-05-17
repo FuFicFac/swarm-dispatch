@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dispatch Loop - Swarm Dispatch</title>
+  <link rel="icon" href="data:,"><title>Dispatch Loop - Swarm Dispatch</title>
   <script src="../scroll-reset.js"></script>
   <link rel="stylesheet" href="page.css">
 </head>
@@ -12,12 +12,13 @@
   <main class="shell">
     <section class="hero">
       <span class="kicker">Dispatch Loop</span>
-      <h1>Dispatch means routing work, not just spawning agents.</h1>
-      <p class="dek">The foreman tracks which lane owns which work, harvests results, switches assignments, and keeps quality gates separate from implementation.</p>
+      <h1>Dispatch means locking the goal, then routing work.</h1>
+      <p class="dek">The foreman starts with a goal preflight, tracks which lane owns which work, harvests results, switches assignments, and keeps quality gates separate from implementation.</p>
     </section>
     <section class="note">
-      <h2>The Seven Moves</h2>
-      <div class="lane"><b>1 Frame</b><span>Write the finish line in one sentence.</span></div>
+      <h2>The Moves</h2>
+      <div class="lane"><b>0 Goal</b><span>Write finish line, done criteria, constraints, assumptions, and question boundaries.</span></div>
+      <div class="lane"><b>1 Frame</b><span>Confirm what must be true before the task is done.</span></div>
       <div class="lane"><b>2 Split</b><span>Create two to six non-overlapping work lanes.</span></div>
       <div class="lane"><b>3 Assign</b><span>Give each agent ownership, boundaries, and a stop condition.</span></div>
       <div class="lane"><b>4 Keep</b><span>The main thread stays on the critical path.</span></div>
@@ -27,7 +28,7 @@
     </section>
     <section class="grid">
       <article class="card"><h3>Why this matters</h3><p>Without dispatch, parallel agents become parallel guesses. With dispatch, each worker has a job, and the foreman keeps the whole system moving.</p></article>
-      <article class="card"><h3>Where Cursor fits</h3><p>Cursor gets the build lanes after the foreman has clarified the plan. It should not be asked to be the final judge of its own work.</p></article>
+      <article class="card"><h3>Where Addy fits</h3><p>Addy Osmani's agent-skills repo supplies the engineering method inside the lanes: spec, plan, build, test, review, simplify, and ship.</p></article>
     </section>
   </main>
   <footer><div class="shell"><a href="../index.html">Back to overview</a> · <a href="https://github.com/FuFicFac/swarm-dispatch/blob/main/docs/swarm-dispatch.md" target="_blank" rel="noopener">Protocol doc</a></div></footer>
